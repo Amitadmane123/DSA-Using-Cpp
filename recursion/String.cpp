@@ -112,22 +112,33 @@ using namespace std;
 
 // } 
 // Subsequences of a string
-void printSubsequences(string str,string output,int i){
+void printSubsequences(string str,string output,int i,vector<string>&v){
     //base case
     if(i>=str.length()){
-        cout<<output<<endl;
+        //cout<<output<<endl;
+        //store
+        v.push_back(output);
         return;
     }
     //exclude
-    printSubsequences(str, output,i+1);
+    printSubsequences(str, output,i+1,v);
     //include
-    output.push_back(str[i]);
-    printSubsequences(str, output, i+1);
+    //below line is responsible for concatanation of output string ans ith character of str string
+    output=output+str[i];
+    printSubsequences(str, output,i+1,v);
 }
 int main(){
     string str="abc";
     string output ="";
+    vector<string>v;
     int i=0;
-    printSubsequences(str, output, i);
+    printSubsequences(str, output, i, v);
+
+    cout<<"Printing all subsequences"<<endl;
+    for(auto val:v){
+        cout<<val<<"";
+    }
+    cout<<endl<<"Size of vector is:"<<v.size()<<endl;
+
     return 0;
 }
