@@ -112,33 +112,72 @@ using namespace std;
 
 // } 
 // Subsequences of a string
-void printSubsequences(string str,string output,int i,vector<string>&v){
-    //base case
-    if(i>=str.length()){
-        //cout<<output<<endl;
-        //store
-        v.push_back(output);
-        return;
-    }
-    //exclude
-    printSubsequences(str, output,i+1,v);
-    //include
-    //below line is responsible for concatanation of output string ans ith character of str string
-    output=output+str[i];
-    printSubsequences(str, output,i+1,v);
+// void printSubsequences(string str,string output,int i,vector<string>&v){
+//     //base case
+//     if(i>=str.length()){
+//         //cout<<output<<endl;
+//         //store
+//         v.push_back(output);
+//         return;
+//     }
+//     //exclude
+//     printSubsequences(str, output,i+1,v);
+//     //include
+//     //below line is responsible for concatanation of output string ans ith character of str string
+//     output=output+str[i];
+//     printSubsequences(str, output,i+1,v);
+// }
+// int main(){
+//     string str="abc";
+//     string output ="";
+//     vector<string>v;
+//     int i=0;
+//     printSubsequences(str, output, i, v);
+
+//     cout<<"Printing all subsequences"<<endl;
+//     for(auto val:v){
+//         cout<<val<<"";
+//     }
+//     cout<<endl<<"Size of vector is:"<<v.size()<<endl;
+
+//     return 0;
+// }
+// minimum number of element required to reach target sum
+// int solve(vector<int>&arr,int target){
+//     //base case
+//     if(target==0){
+//         return 0;
+//     }
+//     if(target<0){
+//         return INT_MAX;
+//     }
+//     // Let's solve 1 case
+//     int mini = INT_MAX;
+//     for(int i=0;i<arr.size();i++){
+
+//     }
+// }
+// int main(){
+//     vector<int>arr{1,2};
+//     int target = 5;
+//     int ans= solve (arr, target);
+//     cout<<"Answer is:"<<ans<<endl;
+//     return 0;
+// }
+int solve(int n, int x, int y,int z){
+   ///base case
+   if(n==0){
+     
+   }
 }
+
 int main(){
-    string str="abc";
-    string output ="";
-    vector<string>v;
-    int i=0;
-    printSubsequences(str, output, i, v);
-
-    cout<<"Printing all subsequences"<<endl;
-    for(auto val:v){
-        cout<<val<<"";
-    }
-    cout<<endl<<"Size of vector is:"<<v.size()<<endl;
-
+    int n=7;
+    int x=5;
+    int y=2;
+    int z=2;
+    //solve function ->returns maximum number of segments 
+    int ans = solve(n,x,y,z);
+    cout<<"Answer is:"<<ans<<endl;
     return 0;
 }
